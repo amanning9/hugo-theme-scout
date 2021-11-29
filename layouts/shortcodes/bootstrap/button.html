@@ -1,0 +1,6 @@
+<a
+        class="btn btn-{{ if .Get "style" }}{{.Get "style" }}{{else}}primary{{end}}"
+        href="{{.Get "href"}}"
+        role="button">
+    {{ .Get "title" }}
+</a>

@@ -1,0 +1,25 @@
+@import "scout-colors";
+
+// Prevent bootswatch from including google fonts.
+$web-font-path: false;
+
+// Scout Font
+$font-family-sans-serif: "Nunito Sans", -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
+
+// Scout Colors
+$primary: $scout-red;
+$secondary: $scout-navy;
+
+$success: $scout-green;
+$info: $scout-blue;
+$warning: $scout-yellow;
+//$danger: null;
+
+$light: $scout-red;
+$dark: $scout-navy;
+
+// Customizations
+$nav-link-font-weight: bold;
+$nav-link-font-size: 1.25rem;

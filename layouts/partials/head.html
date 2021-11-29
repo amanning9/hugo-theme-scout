@@ -1,0 +1,13 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+
+    {{ $font := resources.Get "sass/nunitosans.scss" | resources.ExecuteAsTemplate "sass/nunitosans.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" }}
+    <link rel="stylesheet" href="{{ $font.RelPermalink }}" integrity="{{ $font.Data.Integrity }}">
+
+
+    <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+</head>

@@ -1,0 +1,25 @@
+[module]
+[[module.imports]]
+path="github.com/twbs/bootstrap"
+[[module.imports.mounts]]
+source = "scss"
+target = "assets/sass/bootstrap"
+[[module.imports.mounts]]
+source = "dist/js"
+target = "assets/js/bootstrap"
+
+[[module.imports]]
+path="github.com/thomaspark/bootswatch"
+[[module.imports.mounts]]
+source = "dist"
+target = "assets/sass/bootswatch"
+
+[mediaTypes]
+[mediaTypes."application/x-php"]
+suffixes = ['php']
+
+[outputFormats]
+[outputFormats.PHP]
+mediaType = "application/x-php"
+isPlainText = true
+permalinkable = true

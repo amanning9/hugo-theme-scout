@@ -1,0 +1,2 @@
+{{ $js := resources.Get "js/bootstrap/bootstrap.bundle.min.js" | resources.Minify | resources.Fingerprint "sha512" }}
+<script src="{{$js.RelPermalink}}" integrity="{{ $js.Data.Integrity }}"></script>

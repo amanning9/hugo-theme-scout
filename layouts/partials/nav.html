@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ .Site.BaseURL }}">
+            {{ $logo := resources.Get "images/logo.svg" | resources.ExecuteAsTemplate "images/logo.svg" . | resources.Minify}}
+            <img src="{{ $logo.RelPermalink }}" alt="{{ .Site.Params.group }}" height=100px>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                {{ range .Site.Menus.main }}
+                {{ if .HasChildren }}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ .Name }}</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ .URL }}">{{ .Name }}</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        {{ range .Children }}
+                        <li><a class="dropdown-item" href="{{ .URL }}">{{ .Name }}</a></li>
+                        {{ end }}
+                    </ul>
+                </li>
+                {{ else }}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
+                </li>
+                {{ end }}
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</nav>
