@@ -14,6 +14,12 @@ path="github.com/thomaspark/bootswatch"
 source = "dist"
 target = "assets/sass/bootswatch"
 
+[[module.imports]]
+path="github.com/googlefonts/NunitoSans"
+[[module.imports.mounts]]
+source = "fonts/ttf"
+target = "assets/fonts/nunitosans"
+
 [mediaTypes]
 [mediaTypes."application/x-php"]
 suffixes = ['php']

@@ -1,3 +1,5 @@
+github.com/googlefonts/NunitoSans v0.0.0-20200630203118-19beed7a8f44 h1:Ov3n54AW16urQ7uebqsnQ1ql5ADn+GIeCwFWRCOkksA=
+github.com/googlefonts/NunitoSans v0.0.0-20200630203118-19beed7a8f44/go.mod h1:To2bJbsrazLhIWaknebuJHzY4RDubmaOEwiH3wlGxho=
 github.com/thomaspark/bootswatch v5.1.3+incompatible h1:LzUmgfte5s6ZfBQGLHC3twhaTz4IS3sKtGsufwmfOkI=
 github.com/thomaspark/bootswatch v5.1.3+incompatible/go.mod h1:cxtDY3QMQzBnFdRNoto/LvkM8jy38/sZinU+feQkj5E=
 github.com/twbs/bootstrap v5.1.3+incompatible h1:19+1/69025oghttdacCOGvs1wv9D5lZnpfoCvKUsPCs=
