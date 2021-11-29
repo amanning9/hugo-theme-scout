@@ -1,4 +1,4 @@
-module go.a09.uk/hugo/themes/scout
+module golang.a09.uk/hugo/themes/scout
 
 go 1.16
 
