@@ -3,7 +3,7 @@
 		{{- $glob:= .Get "glob" -}}
 		{{ with .Page.Resources.Match $glob }}
 		{{ range $index, $element := . }}
-		{{ $thumb := $element.Fill "200x200" }}
+		{{ $thumb := $element.Fill "300x300" }}
         {{ $img := $element }}
         <button
             type="button"
@@ -14,8 +14,8 @@
 		<img
             src={{ $thumb.RelPermalink }}
             class="img-thumbnail"
-            width=200px
-            height=200px
+            width=300px
+            height=300px
             alt={{ $img.Title }}
             >
         </button>
