@@ -2,17 +2,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    {{ $cssoptions := (dict "outputStyle" .Site.Params.scssOutputStyle "enableSourceMap" .Site.Params.scssEnableSourceMap) }}
+
     <!-- Main combined stylesheet -->
-    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" }}
+    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS $cssoptions | resources.Fingerprint "sha512" }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
     <!-- Scout font. -->
-    {{ $font := resources.Get "sass/nunitosans.scss" | resources.ExecuteAsTemplate "sass/nunitosans.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" }}
+    {{ $font := resources.Get "sass/nunitosans.scss" | resources.ExecuteAsTemplate "sass/nunitosans.scss" . | resources.ToCSS $cssoptions | resources.Fingerprint "sha512" }}
     <link rel="stylesheet" href="{{ $font.RelPermalink }}" integrity="{{ $font.Data.Integrity }}">
 
     <!-- Favicons -->
-    {{ $logo := resources.Get "images/logo.svg" | resources.ExecuteAsTemplate "images/logo.svg" . | resources.Minify}}
-    <link rel="icon" href="{{ $logo.RelPermalink }}" type="image/svg+xml">
+    {{ $favicon := resources.Get "images/logo.svg" | resources.ExecuteAsTemplate "images/favicon.svg" (dict "ctx" . "type" "favicon") | resources.Minify}}
+    <link rel="icon" href="{{ $favicon.RelPermalink }}" type="image/svg+xml">
 
 
     <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>

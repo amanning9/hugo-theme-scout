@@ -29,3 +29,8 @@ suffixes = ['php']
 mediaType = "application/x-php"
 isPlainText = true
 permalinkable = true
+noUgly = true
+
+[params]
+scssOutputStyle = "compressed"
+scssEnableSourceMap = true
