@@ -1,12 +1,12 @@
 {{ define "main" }}
 
-<div id="carouselExampleSlidesOnly" class="carousel slide mb-2" data-bs-ride="carousel">
+<div id="index-carousel" class="carousel slide mb-2" data-bs-ride="carousel">
     <div class="carousel-inner">
         {{- $active := "active" -}}
         {{- range readDir "assets/images/carousel" -}}
             {{- $path := path.Join "images/carousel" .Name -}}
             {{- $image := resources.Get $path -}}
-            {{- $proc := $image.Fill "1920x200 webp" -}}
+            {{- $proc := $image.Fill "1920x500 webp" -}}
             <div class="carousel-item {{ $active }}">
                 <img src="{{ $proc.RelPermalink }}" class="d-block w-100">
             </div>

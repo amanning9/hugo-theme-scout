@@ -5,7 +5,7 @@
     {{ $cssoptions := (dict "outputStyle" .Site.Params.scssOutputStyle "enableSourceMap" .Site.Params.scssEnableSourceMap) }}
 
     <!-- Main combined stylesheet -->
-    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS $cssoptions | resources.Fingerprint "sha512" }}
+    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS $cssoptions | resources.PostCSS | resources.Fingerprint "sha512" }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
     <!-- Scout font. -->
